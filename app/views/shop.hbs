@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="/css/shop.css">
+
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="tap1 col-lg-3 col-md-3 col-sm-3">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false"
+                        aria-label="Toggle
+                            navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse tab-list" id="navbarTogglerDemo01">
+                        <div class="logo-1">
+                            <a class="navbar-brand" href="#"><img class="img-logo" src="../img/logobmg.png" alt=""></a>
+                        </div>
+                        <div class="setting-1">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0
+                                    list-tool">
+                                <li class="nav-item tool-1"><a class="nav-link" href="#"><i
+                                            class="fas fa-search"></i></a>
+                                    <div class="tool-search">
+                                        <form class="filter">
+                                            <input class="input-search" type="text" id="fname" name="fname" placeholder="Enter your
+                                                    keywords">
+                                        </form>
+                                        <button class="btn-search"><b>Search</b></button>
+                                    </div>
+                                </li>
+                                <li class="nav-item tool-2"><a class="nav-link" href="#"><i class="fas fa-cog"></i></a>
+                                    <div class="account">
+                                        <div class="language">
+                                            <span>LANGUAGE</span><br>
+                                            <a href="#"><img class="img-flag" src="../img/USA.png" alt=""></a>
+                                            <a href="#"><img class="img-flag" src="../img/Duc.png" alt=""></a>
+                                            <a href="#"><img class="img-flag" src="../img/thuysi.png" alt=""></a>
+                                        </div>
+                                        <div class="current">
+                                            <span>CURRENT</span><br>
+                                            <a class="nav-link text-money" href="">$ -USA</a>
+                                        </div>
+                                        <div class="tab-account">
+                                            <ul class="navbar-nav
+                                                    my-account">
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="fas
+                                                                fa-user"></i>MY
+                                                        ACCOUNT</a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="fas
+                                                                fa-heart"></i>MY
+                                                        WISHLIST</a></li>
+                                                <li class="nav-item icon-1"><a class="nav-link" href="#"><i class="fas
+                                                                fa-lock"></i>CHECKOUT</a></li>
+                                                <li class="nav-item icon-2"><a class="nav-link" href="#"><i class="fas
+                                                                fa-lock"></i>LOGIN/REGISTER</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="nav-item tool-3"><a class="nav-link" href="/cart"><i class="fas
+                                                fa-shopping-basket"></i><small>0</small></a>
+                                    <div class="add-stock">
+                                        <div class="stock">
+                                            <span>Your cart is 0 item</span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list-menu">
+                            <ul class="navbar-nav mr-auto mt-2 mt-lg-0
+                                    list-1">
+                                <li class="nav-item active list-home">
+                                    <a class="nav-link a-1" href="/home">HOME</a>
+                                </li>
+                                <li class="nav-item list-shop">
+                                    <a class="nav-link" href="/shop"><b style="color: black;">SHOP</b></a>
+                                    <div class="tab-shop">
+
+                                    </div>
+                                </li>
+                                <li class="nav-item list-bags">
+                                    <a class="nav-link" href="#">BAGS</a>
+                                </li>
+                                <li class="nav-item list-clothes">
+                                    <a class="nav-link" href="#">CLOTHES</a>
+                                </li>
+                                <li class="nav-item list-blog">
+                                    <a class="nav-link" href="#">BLOGS</a>
+                                </li>
+                                <li class="nav-item list-contact">
+                                    <a class="nav-link" href="#">CONTACT
+                                        US</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="list-icon">
+                            <p class="text-theme">2021 SNSTheme. All Rights
+                                Reserved</p>
+                            <a href="https://www.facebook.com/"><i class="fab fa-facebook-square"></i></a>
+                            <a href="#"><i class="fab fa-twitter-square"></i></a>
+                            <a href="#"><i class="fab fa-flickr"></i></a>
+                            <a href="#"><i class="fab
+                                        fa-google-plus-square"></i></a>
+                            <a href="#"><i class="fab fa-instagram-square"></i></a>
+                            <a href="https://www.youtube.com/"><i class="fab
+                                        fa-youtube-square"></i></a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+            <div class="tab-2 col-lg-9 col-md-9 col-sm-9">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="img-1 col-lg-12 col-md-12 col-sm-12">
+                            <img class="img-logo1 img-fluid" src="../img/logoduphong.jpg" alt="">
+                            <span class="text-tab-shop">SHOP</span>
+                        </div>
+                        <div class="product col-lg-12 col-md-12 col-sm-12">
+                            <div class="seclect-filter">
+                                <div class="slider"><i class="fas
+                                            fa-sliders-h"></i></div>
+                                <span class="select">Select filter</span>
+                                <div class="bars"><i class="fas fa-bars"></i></div>
+                                <div class="grid"><i class="fas fa-th"></i></div>
+                                <div class="option">
+                                    <select class="cars">
+                                        <option value="Default sorting">Default
+                                            sorting</option>
+                                        <option value="Sort by popularity">Sort
+                                            by popularity</option>
+                                        <option value="Sort by average
+                                                rating">Sort by average rating</option>
+                                        <option value="Sort by newness">Sort
+                                            by newness</option>
+                                        <option value="Sort by price: low to
+                                                high">Sort by price: low to high</option>
+                                        <option value="Sort by price: high
+                                                to low">Sort by price: high to
+                                            low</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div id="method-filter">
+                                <div class="categories">
+                                    <div>
+                                        <p class="text-categories">CATEGORIES</p>
+                                    </div>
+                                    <ul class="list-filter">
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Bags</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Hemmer</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Men's Shoes</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Sport Clothes</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Sport Watch</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">Women's Shoes</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="square">
+                                    <div>
+                                        <p class="text-categories">COLORS</p>
+                                    </div>
+                                    <ul class="list-filter">
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                                        blue"></i>Blue</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                                        green"></i>Green</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                                        brown"></i>Brown</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                                        yellow"></i>Yellow</a></li>
+                                    </ul>
+                                </div>
+                                <div class="sizes">
+                                    <div>
+                                        <p class="text-categories">SIZES</p>
+                                    </div>
+                                    <ul class="list-filter">
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">S</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">M</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">L</a></li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">XL</a></li>
+                                    </ul>
+                                </div>
+                                <div class="prices">
+                                    <div>
+                                        <p class="text-categories">MAX
+                                            PRICES</p>
+                                    </div>
+                                    <ul class="list-filter">
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">$100-$200</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">$200-$300</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">$300-$400</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">$400-$500</a>
+                                        </li>
+                                        <li class="list-item"><a class="nav-link text-filter" href="#">$500+</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product-cards col-lg-12 col-md-12
+                                col-sm-12">
+                        </div>
+                        <div class="pagination col-lg-4 col-md-4 col-sm-4">
+                            <a href="#">«</a>
+                            <a class="active" href="#">1</a>
+                            <a href="#">2</a>
+                            <a href="#">3</a>
+                            <a href="#">4</a>
+                            <a href="#">5</a>
+                            <a href="#">6</a>
+                            <a href="#">»</a>
+                        </div>
+                        <div class="footer col-lg-9">
+                            <div class="latest-product">
+                                <h5>LATEST PRODUCT</h5>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product1.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product2.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product3.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product4.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product5.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product6.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product7.jpg" alt=""></a>
+                                <a href=""><img class="img-fluid img-prd" src="../img/product8.jpg" alt=""></a>
+                            </div>
+                            <div class="latest-posts">
+                                <h5>LATEST POST</h5>
+                                <div>
+                                    <a href="">
+                                        <h6>Where Music Is Headed Next</h6>
+                                    </a>
+                                    <span>August 8, 2016</span>
+                                </div>
+                                <div>
+                                    <a href="">
+                                        <h6>Sed ut perspiciatis unde omnis
+                                            iste natus</h6>
+                                    </a>
+                                    <span>August 8, 2016</span>
+                                </div>
+                                <div>
+                                    <a href="">
+                                        <h6>Voluptatem accus antium dolor
+                                            emque</h6>
+                                    </a>
+                                    <span>August 8, 2016</span>
+                                </div>
+                                <div>
+                                    <a href="">
+                                        <h6>Nemo enim ipsam voluptatem</h6>
+                                    </a>
+                                    <span>August 8, 2016</span>
+                                </div>
+                            </div>
+                            <div class="newlaster">
+                                <H5>NEWSLETTER</H5>
+                                <div>
+                                    <p>Get the latest launch info and news
+                                        form B&M</p>
+                                    <input type="text" placeholder="your email here">
+                                    <button class="foo-button">SUBMIT</button>
+                                </div>
+                                <div class="tag">
+                                    <strong>TAGS:</strong>
+                                    <a href="#">#Clothes</a>
+                                    <a href="#">#Fashion</a>
+                                    <a href="#">#Shoe</a><br>
+                                    <a href="#">#Sprot style</a>
+                                    <a href="#">#Trending</a>
+                                    <a href="#">#Women</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="Us col-lg-8">
+                            <a href="#">About Us</a>
+                            <a href="#">Customer Service</a>
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Site Map</a>
+                            <a href="#">Search Terms</a>
+                            <a href="#">Advanced Search</a>
+                            <a href="#">Orders and Returns</a>
+                            <a class="Contact-us" href="#">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog view">
+                <div class="modal-content">
+                    <div><img src="/img/ao.jpg" alt=""></div>
+                    <div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                has
+                                been the industry’s standard dummy text ever since the 1500s, when an unknown printer
+                                took a
+                                galley of type and scrambled it to make a type specimen book. It has survived not only
+                                five
+                                centuries, but also the leap into electronic typesetting, remaining essentially
+                                unchanged.
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-shopping-basket"></i>ADD TO CART</button>
+                            <div><i class="fas fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="/javascript/shop.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
+        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
+        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"
+        integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
+        crossorigin="anonymous"></script>
+    <script>
+        async function loadProduct() {
+            return await axios.get('http://localhost:9003/api/authen/cart').then((res) => {
+                const data = res.data.listProduct
+                const mapProduct = data.map(item => {
+
+                    return `
+                        <div class="card mb-3">
+                                <div class="row">
+                                    <div class="col-lg-4 product-img">
+                                        <img class="trants" src="${item.imgages}" alt="">
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">${item.producname}</h5>
+                                            <div class="evaluate">
+                                                <div class="money">$ ${item.total}</div>
+                                                <div class="stars">
+                                                    <form action="">
+                                                        <input class="star
+                                                                star-5" id="star-5" type="radio" name="star" />
+                                                        <label class="star
+                                                                star-5" for="star-5"></label>
+                                                        <input class="star
+                                                                star-4" id="star-4" type="radio" name="star" />
+                                                        <label class="star
+                                                                star-4" for="star-4"></label>
+                                                        <input class="star
+                                                                star-3" id="star-3" type="radio" name="star" />
+                                                        <label class="star
+                                                                star-3" for="star-3"></label>
+                                                        <input class="star
+                                                                star-2" id="star-2" type="radio" name="star" />
+                                                        <label class="star
+                                                                star-2" for="star-2"></label>
+                                                        <input class="star
+                                                                star-1" id="star-1" type="radio" name="star" />
+                                                        <label class="star
+                                                                star-1" for="star-1"></label>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                            <p class="card-text">${item.detail}</p>
+                                            <div class="product-icon">
+                                                <div class="shopping" role="status"><i class="fas
+                                                            fa-shopping-basket"></i></div>
+                                                <div class="search-product"><button type="button" class="btn btn-search" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fas
+                                                            fa-search"></i></button></div>
+                                                <div class="like"><i class="fas
+                                                            fa-heart"></i></div>
+                                                <div class="arrount"><i class="fas
+                                                            fa-retweet"></i></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    `
+                })
+                document.querySelector('.product-cards').innerHTML = mapProduct;
+            })
+        }
+        loadProduct();
+    </script>
+</body>
+
+</html>

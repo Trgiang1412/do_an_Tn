@@ -1,0 +1,418 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.navbar {
+    width: 270px;
+    height: auto;
+    position: absolute;
+    position: fixed;
+}
+
+.tab-list {
+    width: 270px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #bdc3c7;
+}
+
+.img-logo {
+    margin-top: 2rem;
+}
+
+.setting-1 {
+    margin-top: 2rem;
+}
+
+.list-tool {
+    width: 267px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.tool-1,
+.tool-2 {
+    border-right: 1px solid #bdc3c7;
+    flex: 1;
+}
+
+.tool-3 {
+    flex: 1;
+}
+
+.fa-shopping-basket {
+    position: relative;
+}
+
+small {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    left: 55%;
+}
+
+
+/* tool-1 search */
+
+.tool-1 {
+    position: relative;
+}
+
+.tool-search {
+    position: absolute;
+    margin-top: 0.2rem;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    visibility: hidden;
+    transition-delay: 0.2s;
+    font-size: 15px;
+    z-index: 50;
+}
+
+.filter {
+    margin-top: 4rem;
+}
+
+.input-search {
+    border: none;
+    border-bottom: 1px solid #bdc3c7;
+    outline: none;
+}
+
+.btn-search {
+    margin-top: 2rem;
+    padding: 5px 20px 5px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #bdc3c7;
+}
+
+.btn-search:hover {
+    background-color: black;
+    color: white;
+}
+
+.tool-1:hover .tool-search {
+    visibility: visible;
+}
+
+
+/* ket thuc tool-1 search*/
+
+
+/* tool-2 setting */
+
+.tool-2 {
+    position: relative;
+}
+
+.account {
+    position: absolute;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    left: -101%;
+    font-size: 14px;
+    margin-top: 0.1rem;
+    visibility: hidden;
+    z-index: 50;
+}
+
+.language {
+    margin-top: 2rem;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.img-flag {
+    margin-top: 0.2rem;
+    padding: 20px;
+}
+
+.current {
+    margin-top: 2rem;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.text-money {
+    padding: 20px;
+}
+
+.my-account {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column !important;
+}
+
+.tab-account {
+    margin-top: 2rem;
+}
+
+.icon-1 {
+    margin-right: 0.8rem;
+}
+
+.icon-2 {
+    margin-left: 1.5rem;
+}
+
+.tool-2:hover .account {
+    visibility: visible;
+}
+
+
+/* ket thuc setting account */
+
+
+/* bat dau tool-3  */
+
+.tool-3 {
+    position: relative;
+}
+
+.add-stock {
+    position: absolute;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    margin-top: 0.1rem;
+    left: -202%;
+    visibility: hidden;
+    z-index: 50;
+}
+
+.stock {
+    margin-top: 2rem;
+    overflow: inherit;
+}
+
+.tool-3:hover .add-stock {
+    visibility: visible;
+}
+
+
+/* ket thuc too-3 */
+
+.list-1 {
+    display: flex;
+    flex-direction: column !important;
+}
+
+
+/* list-menu */
+
+.list-menu {
+    margin-top: 6rem;
+}
+
+.list-home,
+.list-shop,
+.list-bags,
+.list-clothes,
+.list-blog {
+    border-bottom: 1px solid #bdc3c7;
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.list-contact {
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+
+/* bang home  */
+
+.list-home {
+    position: relative;
+    z-index: 40;
+}
+
+.tab-home {
+    width: 200px;
+    height: 200px;
+    background-color: #f5f5f5;
+    left: 100%;
+    z-index: 60;
+    position: absolute;
+    box-shadow: 1px 1px 5px #95a5a6;
+    visibility: hidden;
+}
+
+.item-home {
+    display: flex;
+    flex-direction: column !important;
+    text-align: left;
+    justify-content: center;
+    width: 180px;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.intro {
+    border-bottom: 1px solid #bdc3c7;
+    padding: 2px;
+}
+
+.list-home:hover .tab-home {
+    visibility: visible;
+}
+
+
+/* ket thuc home */
+
+.list-icon {
+    margin-top: 4.5rem;
+    width: 200px;
+    border-top: 1px solid #bdc3c7;
+}
+
+.text-theme {
+    margin-top: 1rem;
+    color: #b2bec3;
+    font-size: 12px;
+}
+
+.fa-twitter-square,
+.fa-flickr,
+.fa-google-plus-square,
+.fa-instagram-square,
+.fa-youtube-square {
+    font-size: 25px;
+    padding-left: 0.6rem;
+}
+
+.fa-facebook-square {
+    font-size: 25px;
+    color: blue;
+}
+
+.fa-twitter-square {
+    color: #81ecec;
+}
+
+.fa-flickr {
+    color: #fd79a8;
+}
+
+.fa-google-plus-square {
+    color: #e17055;
+}
+
+.fa-instagram-square {
+    color: #6c5ce7;
+}
+
+.fa-youtube-square {
+    color: #d63031;
+}
+
+
+/*  --------tab-3------------------- */
+
+.tab-3 img {
+    width: 920px;
+    height: 550px;
+    position: relative;
+    left: -3%;
+}
+
+.mess {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mess p {
+    display: block;
+    font-size: 13px;
+    padding-left: 0.4rem;
+}
+
+.mess .sent a,
+.mess .call a {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #bdc3c7;
+    margin-top: 1rem;
+}
+
+.mess .sent {
+    float: left;
+}
+
+.mess .call {
+    margin: auto;
+    padding-left: 570px;
+}
+
+.mess .sent a:hover {
+    color: black;
+}
+
+.mess .call a:hover {
+    color: black;
+}
+
+.carousel-item h5 {
+    color: black;
+    font-weight: 1000;
+    font-size: 13px;
+}
+
+.carousel-item h1 {
+    font-weight: 1000;
+    font-size: 60px;
+}
+
+.carousel-indicators {
+    background-color: #2d3436;
+    opacity: 0.5;
+    padding: 1px 20px 1px 20px;
+    width: 100px;
+    bottom: 5%;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.carousel-indicators button {
+    width: 10px !important;
+    height: 10px !important;
+    border-radius: 50%;
+}
+
+.carousel-caption {
+    position: absolute;
+    top: 30%;
+    left: -35%;
+}
+
+.carousel-caption button {
+    font-size: 12px;
+}

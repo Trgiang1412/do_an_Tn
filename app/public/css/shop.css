@@ -1,0 +1,936 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+}
+
+.container-fluid {
+    position: relative;
+}
+
+.navbar {
+    width: 270px;
+    height: auto;
+    position: absolute;
+    position: fixed;
+}
+
+.tab-list {
+    width: 270px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #bdc3c7;
+}
+
+.img-logo {
+    margin-top: 2rem;
+}
+
+.setting-1 {
+    margin-top: 2rem;
+}
+
+.list-tool {
+    width: 267px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid #bdc3c7;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.tool-1,
+.tool-2 {
+    border-right: 1px solid #bdc3c7;
+    flex: 1;
+}
+
+.tool-3 {
+    flex: 1;
+}
+
+.fa-shopping-basket {
+    position: relative;
+}
+
+small {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    left: 55%;
+}
+
+
+/* tool-1 search */
+
+.tool-1 {
+    position: relative;
+}
+
+.tool-search {
+    position: absolute;
+    margin-top: 0.2rem;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    visibility: hidden;
+    transition-delay: 0.2s;
+    font-size: 15px;
+    z-index: 50;
+}
+
+.filter {
+    margin-top: 4rem;
+}
+
+.input-search {
+    border: none;
+    border-bottom: 1px solid #bdc3c7;
+    outline: none;
+}
+
+.btn-search {
+    margin-top: 2rem;
+    padding: 5px 20px 5px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #bdc3c7;
+}
+
+.btn-search:hover {
+    background-color: black;
+    color: white;
+}
+
+.tool-1:hover .tool-search {
+    visibility: visible;
+}
+
+
+/* ket thuc tool-1 search*/
+
+
+/* tool-2 setting */
+
+.tool-2 {
+    position: relative;
+}
+
+.account {
+    position: absolute;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    left: -101%;
+    font-size: 14px;
+    margin-top: 0.1rem;
+    visibility: hidden;
+    z-index: 50;
+}
+
+.language {
+    margin-top: 2rem;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.img-flag {
+    margin-top: 0.2rem;
+    padding: 20px;
+}
+
+.current {
+    margin-top: 2rem;
+    border-bottom: 1px solid #bdc3c7;
+}
+
+.text-money {
+    padding: 20px;
+}
+
+.my-account {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column !important;
+}
+
+.tab-account {
+    margin-top: 2rem;
+}
+
+.icon-1 {
+    margin-right: 0.8rem;
+}
+
+.icon-2 {
+    margin-left: 1.5rem;
+}
+
+.tool-2:hover .account {
+    visibility: visible;
+}
+
+
+/* ket thuc setting account */
+
+
+/* bat dau tool-3  */
+
+.tool-3 {
+    position: relative;
+}
+
+.add-stock {
+    position: absolute;
+    width: 267px;
+    height: 1000px;
+    background-color: white;
+    margin-top: 0.1rem;
+    left: -202%;
+    visibility: hidden;
+    z-index: 50;
+}
+
+.stock {
+    margin-top: 2rem;
+    overflow: inherit;
+}
+
+.tool-3:hover .add-stock {
+    visibility: visible;
+}
+
+
+/* ket thuc too-3 */
+
+.list-1 {
+    display: flex;
+    flex-direction: column !important;
+}
+
+
+/* list-menu */
+
+.list-menu {
+    margin-top: 1rem;
+}
+
+.list-home,
+.list-shop,
+.list-bags,
+.list-clothes,
+.list-blog {
+    border-bottom: 1px solid #bdc3c7;
+    padding: 10px;
+    width: 200px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+
+.list-home:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.list-bags:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.list-shop:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.list-clothes:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.list-blog:hover {
+    font-weight: bold;
+    color: black;
+}
+
+.list-contact {
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.list-contact:hover {
+    font-weight: bold;
+    color: black;
+}
+
+
+/* bang home  */
+
+.list-home {
+    position: relative;
+    z-index: 40;
+}
+
+.tab-home {
+    width: 200px;
+    height: 200px;
+    background-color: #f5f5f5;
+    left: 100%;
+    z-index: 60;
+    position: absolute;
+    box-shadow: 1px 1px 5px #95a5a6;
+    visibility: hidden;
+}
+
+.item-home {
+    display: flex;
+    flex-direction: column !important;
+    text-align: left;
+    justify-content: center;
+    width: 180px;
+    padding-left: 1rem;
+    padding-top: 0.5rem;
+}
+
+.intro {
+    border-bottom: 1px solid #bdc3c7;
+    padding: 2px;
+}
+
+.list-home:hover .tab-home {
+    visibility: visible;
+}
+
+
+/* ket thuc home */
+
+.list-icon {
+    margin-top: 1rem;
+    width: 200px;
+    border-top: 1px solid #bdc3c7;
+}
+
+.list-icon a {
+    margin-left: 0.3rem;
+}
+
+.text-theme {
+    margin-top: 1rem;
+    color: #b2bec3;
+    font-size: 12px;
+}
+
+.fa-twitter-square,
+.fa-flickr,
+.fa-google-plus-square,
+.fa-instagram-square,
+.fa-youtube-square {
+    font-size: 25px;
+    padding-left: 0.6rem;
+}
+
+.fa-facebook-square {
+    font-size: 25px;
+    color: blue;
+}
+
+.fa-twitter-square {
+    color: #81ecec;
+}
+
+.fa-flickr {
+    color: #fd79a8;
+}
+
+.fa-google-plus-square {
+    color: #e17055;
+}
+
+.fa-instagram-square {
+    color: #6c5ce7;
+}
+
+.fa-youtube-square {
+    color: #d63031;
+}
+
+
+/* -------------tab-2----------- */
+
+.tab-2 {
+    height: auto;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+
+.img-1 {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+.img-logo1 {
+    position: absolute;
+    margin-top: 2rem;
+    width: 100%;
+    height: 400px;
+    left: -2%;
+    z-index: 10;
+}
+
+.img-1:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 20;
+    left: -2%;
+    margin-top: 2rem;
+}
+
+.text-tab-shop {
+    font-weight: bold;
+    position: absolute;
+    letter-spacing: 2px;
+    font-size: 40px;
+    color: white;
+    z-index: 30;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+}
+
+.product {
+    margin-top: 5rem;
+    right: -1%;
+    position: relative;
+}
+
+.seclect-filter {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    border: 1px solid #bdc3c7;
+    display: flex;
+    left: -3%;
+}
+
+.slider {
+    width: 70px;
+    height: 70px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.slider:hover {
+    background-color: #d63031;
+}
+
+.select {
+    display: flex;
+    align-items: center;
+    color: #b2bec3;
+    font-size: 13px;
+}
+
+.fa-sliders-h {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+.bars {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #bdc3c7;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    right: 30%;
+    bottom: 24%;
+    cursor: pointer;
+}
+
+.bars:hover {
+    border: 2px solid black;
+}
+
+.fa-bars {
+    font-size: 30px;
+    margin-top: 0.2rem;
+    color: #7f8c8d;
+}
+
+.fa-bars:hover {
+    color: black;
+}
+
+.grid {
+    width: 40px;
+    height: 40px;
+    border: 2px solid #bdc3c7;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    position: absolute;
+    right: 35%;
+    bottom: 24%;
+    cursor: pointer;
+}
+
+.fa-th {
+    font-size: 30px;
+    margin-top: 0.2rem;
+    color: #7f8c8d;
+}
+
+.fa-th:hover {
+    color: black;
+}
+
+.grid:hover {
+    border: 2px solid black;
+}
+
+.option {
+    font-size: 15px;
+    position: absolute;
+    right: 3%;
+    bottom: 24%;
+}
+
+.cars {
+    padding: 9px;
+    color: #95a5a6;
+}
+
+#method-filter {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    border: 1px solid #b2bec3;
+    border-top: none;
+    left: -3%;
+    margin-top: 4.5rem;
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: flex;
+    flex-direction: column;
+    display: none;
+}
+
+.list-filter {
+    display: flex !important;
+    text-align: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.list-item {
+    list-style: none;
+    background-color: #ecf0f1;
+    margin-left: 1rem;
+    border-radius: 20px;
+}
+
+.list-item:hover {
+    background-color: #7f8c8d;
+    transition: 2s;
+}
+
+.text-filter {
+    color: #7f8c8d;
+}
+
+.text-filter:hover {
+    color: white;
+    transition: 1s;
+}
+
+.categories,
+.square,
+.sizes,
+.prices {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.text-categories {
+    font-size: 15px;
+    padding-top: 0.5rem;
+    color: #7f8c8d;
+}
+
+.blue {
+    color: blue !important;
+    padding: 3px;
+}
+
+.green {
+    color: green !important;
+    padding: 3px;
+}
+
+.brown {
+    color: brown !important;
+    padding: 3px;
+}
+
+.yellow {
+    color: yellow;
+    padding: 3px;
+}
+
+.square {
+    margin-right: 17rem !important;
+}
+
+.sizes {
+    margin-right: 27rem !important;
+}
+
+.prices {
+    margin-right: 11rem !important;
+}
+
+.product-cards {
+    position: relative;
+    z-index: 10;
+    margin-top: 10rem;
+    height: auto;
+    left: -2%;
+}
+
+.card-body {
+    margin-left: 2rem;
+    width: 100%;
+}
+
+.product-img {
+    width: 288px;
+    height: 288px;
+    overflow: hidden;
+    position: relative;
+}
+
+.trants {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.trants:hover {
+    transform: scale(1.1, 1.1) rotate(6deg);
+    transition: 0.5s;
+}
+
+.card {
+    border: none;
+}
+
+.evaluate {
+    display: flex;
+    text-align: center;
+    align-items: center;
+}
+
+div.stars {
+    padding-left: 1rem;
+    display: inline-block;
+}
+
+.money {
+    border-right: 1px solid #bdc3c7;
+    padding-right: 1rem;
+    color: red;
+    font-size: 14px;
+}
+
+input.star {
+    display: none;
+}
+
+label.star {
+    float: right;
+    padding: 2px;
+    font-size: 15px;
+    color: #444;
+    transition: all .2s;
+}
+
+input.star:checked~label.star:before {
+    content: '\f005';
+    color: #FD4;
+    transition: all .25s;
+}
+
+input.star-5:checked~label.star:before {
+    color: #FE7;
+    text-shadow: 0 0 20px #952;
+}
+
+input.star-1:checked~label.star:before {
+    color: #F62;
+}
+
+label.star:hover {
+    transform: rotate(-15deg) scale(1.3);
+}
+
+label.star:before {
+    content: '\f006';
+    font-family: FontAwesome;
+}
+
+.product-icon {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+.search-product,
+.like,
+.arrount {
+    width: 40px;
+    height: 40px;
+    background-color: #ecf0f1;
+    border-radius: 100%;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.search-product {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-search {
+    position: absolute;
+    background-color: #ecf0f1 !important;
+    left: -20%;
+    top: -70%;
+}
+
+.shopping {
+    width: 40px;
+    height: 40px;
+    background-color: #ecf0f1;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.shopping:hover .fa-shopping-basket,
+.search-product:hover .fa-search,
+.like:hover .fa-heart,
+.arrount:hover .fa-retweet {
+    color: red;
+    transition: 1s;
+}
+
+.pagination {
+    margin-left: 35rem;
+}
+
+.pagination a {
+    color: black;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+}
+
+.pagination a.active {
+    background-color: dodgerblue;
+    color: white;
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ddd;
+}
+
+.footer {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 7rem;
+    position: relative;
+    left: -2%;
+    border-top: 1px solid #b2bec3;
+}
+
+.latest-product {
+    width: 340px !important;
+    margin-top: 3rem;
+    border-right: 1px solid #b2bec3;
+    height: 440px;
+}
+
+h5 {
+    margin-bottom: 2rem;
+}
+
+.img-prd {
+    width: 75px;
+    height: 75px;
+    padding: 5px 5px 5px 0px;
+}
+
+.latest-posts {
+    width: 280px;
+    height: 440px;
+    margin-top: 3rem;
+    margin-left: 2rem;
+    border-right: 1px solid #b2bec3;
+}
+
+.latest-posts div {
+    margin-top: 2rem;
+}
+
+.latest-posts a {
+    color: black;
+    text-decoration: none;
+}
+
+.latest-posts a h6 {
+    font-size: 14px;
+}
+
+.latest-posts div span {
+    font-size: 12px;
+    color: #b2bec3;
+}
+
+.newlaster {
+    width: 250px;
+    padding-left: 2rem;
+}
+
+.newlaster div {
+    padding-bottom: 2rem;
+}
+
+.foo-button {
+    margin-top: 1rem;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    margin-left: 2.5rem;
+    border: none;
+    font-weight: bold;
+}
+
+.foo-button:hover {
+    background-color: black;
+    transition: 1s;
+    color: white;
+}
+
+.tag {
+    border-top: 1px solid #b2bec3;
+    padding-top: 2.5rem;
+}
+
+.tag a {
+    text-decoration: none;
+    color: #7f8c8d;
+}
+
+.Us {
+    width: 960px;
+    border-top: 1px solid #b2bec3;
+    position: relative;
+    left: -2%;
+    margin-top: 4rem;
+    padding-top: 2rem;
+}
+
+.Us a {
+    text-decoration: none;
+    color: #95a5a6;
+    border-right: 1px solid #b2bec3;
+    font-size: 12px;
+    padding: 0px 10px 0px 10px;
+}
+
+.Contact-us {
+    border: none !important;
+}
+
+.Us a:hover {
+    color: black;
+}
+
+.view {
+    margin-top: 8rem;
+    /* margin-right: -2rem; */
+    left: -10%;
+}
+
+.modal-content {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    justify-content: center;
+    width: 800px !important;
+    box-shadow: 1px 1px 3px 2px black;
+}
+
+.modal-body p {
+    font-size: 14px;
+    color: #95a5a6;
+}
+
+.modal-footer button {
+    background-color: #b2bec3;
+    border: none;
+    margin-right: 2rem;
+    color: black;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.modal-footer div {
+    width: 40px;
+    height: 40px;
+    background-color: #b2bec3;
+    border-radius: 50%;
+    position: relative;
+    margin-right: 2rem;
+}
+
+.modal-footer div .fa-heart {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+}
+
+.modal-footer div:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}
+
+
+/*------------------------------------------- css trang home --------------------------------------------------- */
