@@ -2,22 +2,23 @@ const Products = require('../model/productModel');
 
 
 exports.findProducts = async(req, res) => {
-    const producname = req.query.producname
+    // const producname = req.query.producname
     const listProduct = await Products.find()
-    if (producname) {
-        const filterName = listProduct.filter((item) => {
-            return item.producname.toLowerCase().indexOf(producname.toLowerCase()) !== -1
-        })
-        return res.status(200).json({
-            succcess: true,
-            filterName
-        })
-    } else {
-        return res.status(200).json({
+        // console.log(listProduct)
+        // if (producname) {
+        //     const filterName = listProduct.filter((item) => {
+        //         return item.producname.toLowerCase().indexOf(producname.toLowerCase()) !== -1
+        //     })
+        //     return res.status(200).json({
+        //         succcess: true,
+        //         filterName
+        //     })
+        // } else {
+    return res.status(200).json({
             succcess: true,
             listProduct
         })
-    }
+        // }
 
 }
 exports.createProducts = async(req, res) => {
@@ -50,10 +51,23 @@ exports.updateProduct = async(req, res) => {
 exports.deleteProducts = async(req, res) => {
     const id = req.params.id
     try {
-        const deleteProduct = await Products.deleteOne({ id: Products._id })
+        const deleteProduct = await Products.deleteOne({ id: _id })
         res.status(200).json({
             succcess: true,
             deleteProduct
+        })
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+exports.findProductsId = async(req, res, next) => {
+    const id = req.params.id
+    try {
+        const productId = await Products.findById(id)
+        res.status(200).json({
+            succcess: true,
+            productId
         })
     } catch (error) {
         console.log(error)

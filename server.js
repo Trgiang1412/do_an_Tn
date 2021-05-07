@@ -7,8 +7,7 @@ const mongodb = require('./config/configdb')
 const exphbs = require('express-handlebars');
 const app = express()
 const { errorHandler } = require('./middleware/middleware')
-const port = process.env.PORT || 9002;
-
+const port = process.env.PORT || 9007;
 
 
 mongodb()
@@ -29,11 +28,12 @@ app.use(express.static(path.join(__dirname, '/app/public')))
 
 
 //app.use su dung cac phan mem trung gian middleware
-app.use(express.json())
-app.use(cors())
+app.use(express.json()) // là một hàm phần mềm trung gian được tích hợp sẵn trong Express. Nó phân tích cú pháp các yêu cầu đến với tải trọng JSON và dựa trên trình phân tích cú pháp cơ thể .
+app.use(cors()) // cho phép nhiều tài nguyên khác nhau của một trang web co thể truy vấn từ domain khác vs domain trang đó 
+
 app.use('/api/authen', require('./api/router/authenRouter'))
 app.use('/api/authen', require('./api/router/productRouter'))
-
+app.use('/api/authen', require('./api/router/keyRouter'))
 app.use(errorHandler)
 
 
@@ -61,6 +61,9 @@ app.get('/cart', (req, res) => {
 })
 app.get('/home', (req, res) => {
     res.render('home', { layout: false })
+})
+app.get('/private', (req, res) => {
+    res.send('wellcome')
 })
 
 

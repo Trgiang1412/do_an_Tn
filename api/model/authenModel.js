@@ -50,6 +50,7 @@ User.pre('save', async function(next) {
     this.password = await bcrypt.hash(this.password, salt);
     next()
 })
+
 User.methods.matchPassword = async function(password) {
     return await bcrypt.compare(password, this.password)
 }

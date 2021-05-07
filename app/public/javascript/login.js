@@ -50,7 +50,8 @@ async function loginUsers() {
             password: password.value,
         }).then((res) => {
             console.log(res, 'res register')
-                // window.location = "/shop"
+            localStorage.setItem('token', res.data.token)
+            window.location = "/shop"
         });
 
     } catch (error) {

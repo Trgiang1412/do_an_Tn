@@ -6,17 +6,24 @@ const crypto = require('crypto')
 const _ = require('lodash')
 
 
+exports.name = async(req, res, next) => {
+    const id = req.params.id
 
+    try {
+        const userName = await Users.findById(id)
+        const name = userName.name
+        res.status(200).json({
+            name
+        })
+    } catch (error) {
+        next(error)
+    }
+}
 
 exports.register = async(req, res, next) => {
     const { email, name, password, address, gender, phone } = req.body
     try {
-        // const find = await Users.find()
-        // find.forEach(item => {
-        //     if (email === item.email) {
-        //         return next(new ErrorResponse('email da dang ki', 404))
-        //     }
-        // })
+
         const creatUser = await Users.create({ email, name, password, address, gender, phone })
 
         return sendToken(creatUser, 200, res)
@@ -48,12 +55,14 @@ exports.login = async(req, res, next) => {
 
 }
 exports.forgotPassword = function(req, res, next) {
-    crypto.randomBytes(32, (err, buffer) => {
+    crypto.randomBytes(32, (err, buffer) => { //  dùng để tạo dữ liệu ngẫu nhiên nhân tạo được xây dựng tốt về mặt mật mã và số byte được tạo trong mã đã viết 
+        // size: số byte được tạo 
+        // callback: Nó là một hàm được tạo bởi hai tham số là err và buf
+        // buffer: được thiết kế xử lý dữ liệu nhị phân thô 
         if (err) {
             console.log(err)
         }
         const token = buffer.toString("hex")
-
 
         Users.findOne({ email: req.body.email }).then(user => {
             if (!user) {
@@ -129,7 +138,7 @@ exports.resetPassword = async(req, res, next) => {
             // } else {
 
     } catch (error) {
-        return next(new ErrorResponse('Lỗi xác thực !!!', 401))
+        return next(error)
     }
 }
 
@@ -148,23 +157,6 @@ exports.resetPassword = async(req, res, next) => {
 //     }
 
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 const sendToken = (user, statusCode, res) => {

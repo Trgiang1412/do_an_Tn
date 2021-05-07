@@ -1,7 +1,7 @@
 const button = document.querySelector('.slider')
 const filter = document.querySelector('#method-filter')
 const cart = document.querySelector('.product-cards')
-
+const logout = document.querySelector('.icon-2')
 
 
 button.addEventListener("click", () => {
@@ -13,3 +13,7 @@ button.addEventListener("click", () => {
         cart.style.marginTop = "25rem";
     }
 });
+
+logout.addEventListener("click", () => {
+    localStorage.removeItem('token')
+})

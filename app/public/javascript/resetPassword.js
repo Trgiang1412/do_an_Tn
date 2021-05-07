@@ -13,7 +13,7 @@ async function forgotPassword() {
             newPass: newPass.value,
         }).then((res) => {
             console.log(res, 'res register')
-                // window.location = "/login"
+            window.location = "/login"
         });
 
     } catch (error) {
