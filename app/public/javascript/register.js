@@ -18,7 +18,7 @@ form.addEventListener('submit', (e) => {
 async function getUsers() {
 
     try {
-        await axios.post('http://localhost:7001/api/authen/register', {
+        await axios.post('http://localhost:9007/api/authen/register', {
             name: username.value,
             address: address.value,
             phone: phone.value,

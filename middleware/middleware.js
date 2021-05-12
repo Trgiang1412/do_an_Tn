@@ -5,6 +5,7 @@ exports.errorHandler = (err, req, res, next) => {
     error.message = err.message
     if (err.code === 11000) {
         const message = 'truong da ton tai'
+
         error = new ErrorResponse(message, 401)
     }
     if (err.name === "ValidationError") {

@@ -62,9 +62,7 @@ app.get('/cart', (req, res) => {
 app.get('/home', (req, res) => {
     res.render('home', { layout: false })
 })
-app.get('/private', (req, res) => {
-    res.send('wellcome')
-})
+
 
 
 

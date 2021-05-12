@@ -1,8 +1,7 @@
 const Products = require('../model/productModel');
-
+const Cart = require('../model/cartModel')
 
 exports.findProducts = async(req, res) => {
-    // const producname = req.query.producname
     const listProduct = await Products.find()
         // console.log(listProduct)
         // if (producname) {
@@ -73,3 +72,58 @@ exports.findProductsId = async(req, res, next) => {
         console.log(error)
     }
 }
+
+exports.fillerProduct = async(req, res, next) => {
+    const producname = req.query.producname
+    const category = req.query.category
+    try {
+        const listProduct = await Products.find()
+
+        if (producname) {
+            const filterName = listProduct.filter((item) => {
+                return item.producname.toLowerCase().indexOf(producname.toLowerCase()) !== -1
+            })
+            return res.status(200).json({
+                succcess: true,
+                filterName
+            })
+        } else if (category) {
+            const filterCategory = listProduct.filter((item) => {
+                return item.category.toLowerCase().indexOf(category.toLowerCase()) !== -1
+            })
+            res.status(200).json({
+                succcess: true,
+                filterCategory
+            })
+        }
+    } catch (error) {
+        next(error)
+    }
+}
+
+exports.prductCart = async(req, res, next) => {
+    const productId = req.params.id
+    const cart = new Cart(req.session.cart ? req.session.cart : { items: {} });
+
+    try {
+        await Products.findById(productId, function(err, product) {
+            if (err) {
+                return res.redircet('/shop')
+            }
+            cart.add(product, product.id)
+            req.session.cart = cart;
+            console.log(req.session.cart);
+            return res.redircet('/shop')
+
+        })
+    } catch (error) {
+
+    }
+
+}
+
+// exports.addToCart = (req, res, next) => {
+//     const addedProduct = Products.findById(req.body.id)[0];
+//     Cart.save(addedProduct);
+//     res.redirect('/cart');
+// }

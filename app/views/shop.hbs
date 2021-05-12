@@ -60,8 +60,10 @@
                                         <div class="tab-account">
                                             <ul class="navbar-nav
                                                     my-account">
-                                                <li class="nav-item "><a class="nav-link " href="#"><i class="fas
-                                                                fa-user"></i><p class="inner"></p></a></li>
+                                                <li class="nav-item"><a class="nav-link" href="#"><i class="fas
+                                                                fa-user"></i>
+                                                        <p class="inner"></p>
+                                                    </a></li>
                                                 <li class="nav-item"><a class="nav-link" href="#"><i class="fas
                                                                 fa-heart"></i>MY
                                                         WISHLIST</a></li>
@@ -180,13 +182,17 @@
                                         <p class="text-categories">COLORS</p>
                                     </div>
                                     <ul class="list-filter">
-                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas
+                                                        fa-square
                                                         blue"></i>Blue</a></li>
-                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas
+                                                        fa-square
                                                         green"></i>Green</a></li>
-                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas
+                                                        fa-square
                                                         brown"></i>Brown</a></li>
-                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas fa-square
+                                        <li class="list-item"><a class="nav-link text-filter" href="#"><i class="fas
+                                                        fa-square
                                                         yellow"></i>Yellow</a></li>
                                     </ul>
                                 </div>
@@ -279,7 +285,8 @@
                                 <div>
                                     <p>Get the latest launch info and news
                                         form B&M</p>
-                                    <input type="text" placeholder="your email here">
+                                    <input type="text" placeholder="your
+                                            email here">
                                     <button class="foo-button">SUBMIT</button>
                                 </div>
                                 <div class="tag">
@@ -310,33 +317,7 @@
 
 
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog view">
-                <div class="modal-content">
-                    <div><img src="/img/ao.jpg" alt=""></div>
-                    <div>
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                has
-                                been the industry’s standard dummy text ever since the 1500s, when an unknown printer
-                                took a
-                                galley of type and scrambled it to make a type specimen book. It has survived not only
-                                five
-                                centuries, but also the leap into electronic typesetting, remaining essentially
-                                unchanged.
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-shopping-basket"></i>ADD TO CART</button>
-                            <div><i class="fas fa-heart"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
 
     </div>
@@ -357,21 +338,21 @@
         crossorigin="anonymous"></script>
     <script>
 
-        async function getToken(){
+        async function getToken() {
             const user = localStorage.getItem('token')
-            if(user){
-            return    await axios.get('http://localhost:9007/api/authen/private').then((res)=>{
-                console.log(res)
-                loadProduct()
-                getName()
-            })
-            }else{
+            if (user) {
+                return await axios.get('http://localhost:9007/api/authen/private').then((res) => {
+                    console.log(res)
+                    loadProduct()
+                    getName()
+                })
+            } else {
                 window.location = "/login"
             }
         }
         getToken()
         async function loadProduct() {
-             await axios.get('http://localhost:9007/api/authen/cart').then((res) => {
+            await axios.get('http://localhost:9007/api/authen/cart').then((res) => {
                 const data = res.data.listProduct
                 const mapProduct = data.map(item => {
 
@@ -429,18 +410,54 @@
                     `
                 })
                 document.querySelector('.product-cards').innerHTML = mapProduct;
+
+            })
+            const zoom = document.querySelector('.search-product')
+            zoom.addEventListener("click", zoomProduct)
+            async function zoomProduct() {
+                await axios.get('http://localhost:9007/api/authen/cart/608a1da60a3c030cce62e6ec').then((res) => {
+                    const zoomProducts = res.data.productId
+                    const productsId = zoomProducts.map(data => {
+                        return `
+                            <div class="modal-dialog view">
+                <div class="modal-content">
+                    <div><img src="${data.imgages}" alt=""></div>
+                    <div>
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">${data.producname}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p>
+                                ${data.detail}
+                            </p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-shopping-basket"></i>ADD TO CART</button>
+                            <div><i class="fas fa-heart"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        `
+                    })
+                    document.querySelector('.fade').innerHTML = productsId;
+                })
+            }
+        }
+
+
+
+
+        async function getName() {
+            await axios.get('http://localhost:9007/api/authen/name/6090c0941f23b32935d7cf29').then((res) => {
+
+                const userName = document.querySelector('.inner').innerHTML = res.data.name
             })
         }
 
 
-     
 
-async function getName(){
-    await axios.post('http://localhost:9007/api/authen/name/6090c0941f23b32935d7cf29').then((res)=>{
-        console.log(res , 'name')
-    const userName  = document.querySelector('.inner').innerHTML = res.data.name
-    })
-} 
 
     </script>
 </body>
