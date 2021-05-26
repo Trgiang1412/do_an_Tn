@@ -173,7 +173,7 @@ small {
 }
 
 .icon-2 {
-    margin-left: 1.5rem;
+    margin-right: 2rem;
 }
 
 .tool-2:hover .account {
@@ -222,7 +222,7 @@ small {
 /* list-menu */
 
 .list-menu {
-    margin-top: 6rem;
+    margin-top: 1rem;
 }
 
 .list-home,
@@ -286,7 +286,7 @@ small {
 /* ket thuc home */
 
 .list-icon {
-    margin-top: 4.5rem;
+    margin-top: 1rem;
     width: 200px;
     border-top: 1px solid #bdc3c7;
 }

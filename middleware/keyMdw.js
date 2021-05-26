@@ -8,6 +8,6 @@ exports.verifyToken = function(req, res, next) {
         next();
     } else {
         // res.sendStatus(403);
-        res.redirect('/login')
+        res.redirect('/')
     }
 }

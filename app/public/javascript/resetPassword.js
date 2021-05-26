@@ -1,6 +1,6 @@
 const form = document.querySelector('form');
 const newPass = document.querySelector('.newPass');
-// const check = document.querySelector('.confirmPass')
+const check = document.querySelector('.confirmPass')
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     forgotPassword();
@@ -9,14 +9,15 @@ form.addEventListener('submit', (e) => {
 
 async function forgotPassword() {
     try {
-        await axios.put('http://localhost:9007/api/authen/resetpassword/:resetpasswordtoken', {
+        await axios.put('http://localhost:9007/api/authen/resetpassword', {
             newPass: newPass.value,
+            resetpasswordtoken: check.value
         }).then((res) => {
-            console.log(res, 'res register')
-            window.location = "/login"
+            alert('Đổi mật khẩu thành công')
+            window.location = "/"
         });
 
     } catch (error) {
-        console.error(error);
+        alert('Lỗi')
     }
 }

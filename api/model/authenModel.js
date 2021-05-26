@@ -40,7 +40,11 @@ const User = new UserSchema({
         require: true
     }
 
+
 })
+
+
+
 
 User.pre('save', async function(next) {
     if (!this.isModified('password')) {

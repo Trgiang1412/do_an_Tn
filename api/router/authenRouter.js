@@ -6,7 +6,7 @@ const { register, login, forgotPassword, resetPassword, name } = require("../con
 router.route('/register').post(register)
 router.route('/login').post(login)
 router.route('/authentication-email').put(forgotPassword)
-router.route('/resetpassword/:resetpasswordtoken').put(resetPassword)
+router.route('/resetpassword').put(resetPassword)
 router.route('/name/:id').get(name)
 
 

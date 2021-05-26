@@ -25,14 +25,15 @@ async function getUsers() {
             email: email.value,
             password: password.value,
         }).then((res) => {
-            console.log(res, 'res register')
-            window.location = "/login"
+            alert('Đăng kí thành công')
+                // window.location = "/"
         });
 
     } catch (error) {
-        console.error(error);
+        alert('Trường đã tồn tại')
     }
 }
+
 
 
 // function checkInputs() {

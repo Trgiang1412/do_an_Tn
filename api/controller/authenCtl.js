@@ -55,7 +55,7 @@ exports.login = async(req, res, next) => {
 
 }
 exports.forgotPassword = function(req, res, next) {
-    crypto.randomBytes(32, (err, buffer) => { //  dùng để tạo dữ liệu ngẫu nhiên nhân tạo được xây dựng tốt về mặt mật mã và số byte được tạo trong mã đã viết 
+    crypto.randomBytes(4, (err, buffer) => { //  dùng để tạo dữ liệu ngẫu nhiên nhân tạo được xây dựng tốt về mặt mật mã và số byte được tạo trong mã đã viết 
         // size: số byte được tạo 
         // callback: Nó là một hàm được tạo bởi hai tham số là err và buf
         // buffer: được thiết kế xử lý dữ liệu nhị phân thô 
@@ -82,7 +82,7 @@ exports.forgotPassword = function(req, res, next) {
                 subject: "password reset",
                 html: `
                 <p>you request for password reset</p>
-                <h5>click in this <a href="http://localhost:9007/resetpassword/${token}">click</a></h5>
+                <h5>click in this <a href="http://localhost:9007/resetpassword">click </a>code : ${token}</h5>
                 `
             }
 
@@ -112,33 +112,34 @@ exports.forgotPassword = function(req, res, next) {
 
 
 exports.resetPassword = async(req, res, next) => {
-    const { newPass } = req.body;
-    const { resetpasswordtoken } = req.params
-    try {
-        // if (resetpasswordtoken) {
+    const { newPass, resetpasswordtoken } = req.body;
+
+
+    if (resetpasswordtoken) {
         jwt.verify(resetpasswordtoken, process.env.JWT_Secret, function(error, decodedData) {
-                Users.findOne({ resetpasswordtoken }, (err, user) => {
-                    if (err || !user) {
-                        return next(new ErrorResponse('Users with this token do not exit', 400))
+
+            Users.findOne({ resetpasswordtoken }, (err, user) => {
+                if (err || !user) {
+                    return next(new ErrorResponse('Users with this token do not exit', 400))
+                }
+                const obj = {
+                    password: newPass,
+                    resetpasswordtoken: ''
+                }
+                user = _.extend(user, obj);
+                user.save((err, result) => {
+                    if (err) {
+                        return next(new ErrorResponse('đặt lại lỗi mật khẩu!!!', 400))
+                    } else {
+                        return res.status(200).json({ message: "Mật khẩu của bạn đã được thay đổi" })
                     }
-                    const obj = {
-                        password: newPass,
-                        resetpasswordtoken: ''
-                    }
-                    user = _.extend(user, obj);
-                    user.save((err, result) => {
-                        if (err) {
-                            return next(new ErrorResponse('đặt lại lỗi mật khẩu!!!', 400))
-                        } else {
-                            return res.status(200).json({ message: "Mật khẩu của bạn đã được thay đổi" })
-                        }
-                    })
                 })
             })
-            // } else {
-
-    } catch (error) {
-        return next(error)
+        })
+    } else {
+        return res.status(401).json({
+            error: "authentication error!!"
+        })
     }
 }
 

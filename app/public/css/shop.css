@@ -88,6 +88,8 @@ small {
 
 .filter {
     margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
 }
 
 .input-search {
@@ -170,7 +172,7 @@ small {
 }
 
 .icon-2 {
-    margin-left: 1.5rem;
+    margin-right: 2rem;
 }
 
 .tool-2:hover .account {
@@ -934,3 +936,17 @@ h5 {
 
 
 /*------------------------------------------- css trang home --------------------------------------------------- */
+
+.btn-searchs {
+    margin-top: 1rem;
+    padding: 5px 20px 5px 20px;
+    border-radius: 30px;
+    border: none;
+    background-color: #bdc3c7;
+}
+
+.btn-searchs:hover {
+    background-color: black;
+    color: white;
+    transition: 1s;
+}

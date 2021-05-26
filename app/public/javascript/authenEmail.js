@@ -12,10 +12,10 @@ async function forgotPassword() {
         await axios.put('http://localhost:9007/api/authen/authentication-email', {
             email: email.value,
         }).then((res) => {
-            console.log(res, 'res register')
+            alert('Đã gửi thông tin đến email')
         });
 
     } catch (error) {
-        console.error(error);
+        alert('Email không chính xác')
     }
 }

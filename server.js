@@ -44,13 +44,13 @@ app.use(errorHandler)
 app.get('/register', (req, res) => {
     res.render('register', { layout: false })
 })
-app.get('/login', (req, res) => {
+app.get('/', (req, res) => {
     res.render('login', { layout: false })
 })
 app.get('/authentication-email', (req, res) => {
     res.render('authenEmail', { layout: false })
 })
-app.get('/resetpassword/:resetpasswordtoken', (req, res) => {
+app.get('/resetpassword', (req, res) => {
     res.render('resetPassword', { layout: false })
 })
 app.get('/shop', (req, res) => {
@@ -63,7 +63,13 @@ app.get('/home', (req, res) => {
     res.render('home', { layout: false })
 })
 
+app.get('/bag', (req, res) => {
+    res.render('bag', { layout: false })
+})
 
+app.get('/clothes', (req, res) => {
+    res.render('clothes', { layout: false })
+})
 
 
 

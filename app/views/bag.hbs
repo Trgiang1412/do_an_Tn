@@ -95,13 +95,13 @@
                                     <a class="nav-link a-1" href="/home">HOME</a>
                                 </li>
                                 <li class="nav-item list-shop">
-                                    <a class="nav-link" href="/shop"><b style="color: black;">SHOP</b></a>
+                                    <a class="nav-link" href="/shop">SHOP</a>
                                     <div class="tab-shop">
 
                                     </div>
                                 </li>
                                 <li class="nav-item list-bags">
-                                    <a class="nav-link" href="/bag">BAGS</a>
+                                    <a class="nav-link" href="/bag"><b style="color: black;">BAGS</b></a>
                                 </li>
                                 <li class="nav-item list-clothes">
                                     <a class="nav-link" href="/clothes">CLOTHES</a>
@@ -141,7 +141,7 @@
                             <div class="seclect-filter">
                                 <div class="slider"><i class="fas
                                             fa-sliders-h"></i></div>
-                                
+                               
                                 <div class="bars"><i class="fas fa-bars"></i></div>
                                 <div class="grid"><i class="fas fa-th"></i></div>
                                 <div class="option">
@@ -369,24 +369,10 @@
         integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ=="
         crossorigin="anonymous"></script>
     <script>
-
-        async function getToken() {
-            const user = localStorage.getItem('token')
-            if (user) {
-                return await axios.get('http://localhost:9007/api/authen/private').then((res) => {
-                    
-                    loadProduct()
-                    getName()
-                    
-                })
-            } else {
-                window.location = "/"
-            }
-        }
-        getToken()
         async function loadProduct() {
-            await axios.get('http://localhost:9007/api/authen/cart').then((res) => {
-                const data = res.data.listProduct
+            await axios.get('http://localhost:9007/api/authen/bag').then((res) => {
+                const data = res.data.allBag
+                console.log(data)
                 const mapProduct = data.map(item => {
 
                     return `
@@ -445,115 +431,6 @@
                 document.querySelector('.product-cards').innerHTML = mapProduct;
 
             })
-            const zoom = document.querySelector('.search-product')
-            zoom.addEventListener("click", zoomProduct)
-            async function zoomProduct() {
-                await axios.get('http://localhost:9007/api/authen/cart/608a1da60a3c030cce62e6ec').then((res) => {
-                    const zoomProducts = res.data.productId
-                    console.log(zoomProducts)
-                   document.querySelector('.fade').innerHTML = 
-                        `
-                            <div class="modal-dialog view">
-                <div class="modal-content">
-                    <div><img src="${zoomProducts.imgages}" alt=""></div>
-                    <div>
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">${zoomProducts.producname}</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <p>
-                                ${zoomProducts.detail}
-                            </p>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"><i class="fas fa-shopping-basket"></i>ADD TO CART</button>
-                            <div><i class="fas fa-heart"></i></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-                        `
-                 
-                 
-                })
-               
-            }
-            
         }
-
-
-
-
-
-
-
-
-        async function getName() {
-            await axios.get('http://localhost:9007/api/authen/name/6090c0941f23b32935d7cf29').then((res) => {
-
-                const userName = document.querySelector('.inner').innerHTML = res.data.name
-            })
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const form = document.querySelector('.filter')
-const product = document.querySelector('.input-search');
-
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-       addCart();
-
-});
-async function addCart() {
-        await axios.get('http://localhost:9007/api/authen/filter').then((res) => {
-             const filter = res.data.fillterProduct
-              console.log(filter, 'res register')
-              const filterProduct = filter.map(items =>{
-                  return `
-                     <div class="card mb-3" style="max-width: 200px;max-height:30px">
-                                            <div class="row g-0">
-                                                <div class="col-md-3">
-                                                    <img  class="img-thumbnail" src="${items.imgages}" alt="...">
-                                                </div>
-                                                <div class="col-md-9">
-                                                    <div class="card-body">
-                                                        <h5 class="card-title" style="font-size: 13px; ">${items.producname}</h5>
-                                                        <p style="font-size: 13px;color: red;">${items.total}$</p>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                  `
-              })
-               document.querySelector('.form-filler').innerHTML = filterProduct;
-
-        });
-
-    
-}
-
-
-
-
-
-
+        loadProduct()
     </script>
-</body>
-
-</html>

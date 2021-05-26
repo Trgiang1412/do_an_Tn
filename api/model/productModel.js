@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const { createProducts } = require('../controller/productCtl');
 const ProductSchema = mongoose.Schema;
-
+const crypto = require('crypto')
 const product = new ProductSchema({
     producname: {
         type: String,
@@ -25,7 +26,9 @@ const product = new ProductSchema({
     category: {
         type: String,
         require: true
-    }
+    },
+
+
 })
 const products = mongoose.model('products', product);
 

@@ -588,3 +588,50 @@ h5 {
 
 
 /*------------------------------------------- css trang home --------------------------------------------------- */
+
+.ud_cart {
+    padding: 10px 20px 10px 20px;
+    border: none;
+    border-radius: 20px;
+    float: right;
+    font-weight: bold;
+}
+
+.ud_cart:hover {
+    background: black;
+    color: white;
+    transition: 1s;
+}
+
+.cart {
+    position: absolute;
+    left: 30%;
+}
+
+.btn {
+    background: #7f8c8d;
+    font-weight: bold;
+    border-radius: 20px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: black;
+    color: white;
+    transition: 1s;
+}
+
+div .card-text {
+    display: block;
+    padding: 2px 20px 0px 0px;
+}
+
+.card-body div {
+    display: flex;
+    border-bottom: 1px solid #7f8c8d;
+}
+
+.card-body .tt {
+    display: flex;
+    border: none !important;
+}

@@ -49,12 +49,12 @@ async function loginUsers() {
             email: email.value,
             password: password.value,
         }).then((res) => {
-            console.log(res, 'res register')
+
             localStorage.setItem('token', res.data.token)
             window.location = "/shop"
         });
 
     } catch (error) {
-        console.error(error);
+        alert('mật khẩu hoặc emmail không chính xác ')
     }
 }
