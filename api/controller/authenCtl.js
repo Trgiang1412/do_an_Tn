@@ -55,10 +55,7 @@ exports.login = async(req, res, next) => {
 
 }
 exports.forgotPassword = function(req, res, next) {
-    crypto.randomBytes(4, (err, buffer) => { //  dùng để tạo dữ liệu ngẫu nhiên nhân tạo được xây dựng tốt về mặt mật mã và số byte được tạo trong mã đã viết 
-        // size: số byte được tạo 
-        // callback: Nó là một hàm được tạo bởi hai tham số là err và buf
-        // buffer: được thiết kế xử lý dữ liệu nhị phân thô 
+    crypto.randomBytes(4, (err, buffer) => {
         if (err) {
             console.log(err)
         }
@@ -82,7 +79,7 @@ exports.forgotPassword = function(req, res, next) {
                 subject: "password reset",
                 html: `
                 <p>you request for password reset</p>
-                <h5>click in this <a href="http://localhost:9007/resetpassword">click </a>code : ${token}</h5>
+                <h5>click in this <a href="http://localhost:9000/resetpassword">click </a>code : ${token}</h5>
                 `
             }
 
@@ -144,20 +141,7 @@ exports.resetPassword = async(req, res, next) => {
 }
 
 
-// exports.resetPassword = async(req, res, next) => {
-//     const { id, resetpasswordtoken } = req.params;
-//     const { password } = req.body
-//     try {
-//         const resetPass = await Users.updateOne({ id: Users._id, resetpasswordtoken: Users.resetpasswordtoken, password })
-//         res.status(200).json({
-//             success: true,
-//             resetPass
-//         })
-//     } catch (error) {
-//         next(error)
-//     }
 
-// }
 
 
 const sendToken = (user, statusCode, res) => {

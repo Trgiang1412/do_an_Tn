@@ -9,27 +9,26 @@ const app = express()
 const { errorHandler } = require('./middleware/middleware')
 const port = process.env.PORT || 9007;
 
-
 mongodb()
 
 
 
-// view enginer express-hbs
+
 app.engine('hbs', exphbs({
     extname: '.hbs'
 }));
 app.set('view engine', 'hbs');
 app.set('views', path.join(__dirname, 'app/views'));
-// public file css img justifyContent: 'space-around',
+
 app.use(express.static(path.join(__dirname, '/app/public')))
 
 
 
 
 
-//app.use su dung cac phan mem trung gian middleware
-app.use(express.json()) // là một hàm phần mềm trung gian được tích hợp sẵn trong Express. Nó phân tích cú pháp các yêu cầu đến với tải trọng JSON và dựa trên trình phân tích cú pháp cơ thể .
-app.use(cors()) // cho phép nhiều tài nguyên khác nhau của một trang web co thể truy vấn từ domain khác vs domain trang đó 
+
+app.use(express.json())
+app.use(cors())
 
 app.use('/api/authen', require('./api/router/authenRouter'))
 app.use('/api/authen', require('./api/router/productRouter'))
@@ -40,7 +39,7 @@ app.use(errorHandler)
 
 
 
-//app.get : lay file len server
+
 app.get('/register', (req, res) => {
     res.render('register', { layout: false })
 })
@@ -77,7 +76,7 @@ app.get('/clothes', (req, res) => {
 
 
 
-//connect server
+
 const server = app.listen(port, (err) => {
     if (err) console.log(err);
     console.log(`server is connect  on ${port}`)

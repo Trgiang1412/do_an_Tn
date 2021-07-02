@@ -26,11 +26,11 @@ async function getUsers() {
             password: password.value,
         }).then((res) => {
             alert('Đăng kí thành công')
-                // window.location = "/"
+            window.location = "/"
         });
 
     } catch (error) {
-        alert('Trường đã tồn tại')
+        alert('Email đã đăng kí')
     }
 }
 

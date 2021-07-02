@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
 
 async function forgotPassword() {
     try {
-        await axios.put('http://localhost:9007/api/authen/authentication-email', {
+        await axios.put('http://localhost:9000/api/authen/authentication-email', {
             email: email.value,
         }).then((res) => {
             alert('Đã gửi thông tin đến email')

@@ -370,7 +370,7 @@
         crossorigin="anonymous"></script>
     <script>
         async function loadProduct() {
-            await axios.get('http://localhost:9007/api/authen/bag').then((res) => {
+            await axios.get('http://localhost:9000/api/authen/bag').then((res) => {
                 const data = res.data.allBag
                 console.log(data)
                 const mapProduct = data.map(item => {

@@ -370,7 +370,7 @@
         crossorigin="anonymous"></script>
     <script>
         async function loadProduct() {
-            await axios.get('http://localhost:9007/api/authen/notbag').then((res) => {
+            await axios.get('http://localhost:9000/api/authen/notbag').then((res) => {
                 const data = res.data.listnotBag
                 console.log(data)
                 const mapProduct = data.map(item => {

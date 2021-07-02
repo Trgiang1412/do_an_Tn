@@ -521,7 +521,7 @@ form.addEventListener('submit', (e) => {
 
 });
 async function addCart() {
-        await axios.get('http://localhost:9007/api/authen/filter').then((res) => {
+        await axios.get('http://localhost:9000/api/authen/filter').then((res) => {
              const filter = res.data.fillterProduct
               console.log(filter, 'res register')
               const filterProduct = filter.map(items =>{
